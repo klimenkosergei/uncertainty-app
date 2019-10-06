@@ -1,0 +1,66 @@
+.widget {
+    background: #464B5E;
+    border-radius: 5px;
+    overflow: hidden;
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+
+        padding: 1.4rem;
+
+        font-size: 1.8rem;
+        color: $color-secondary;
+        background: $color-dark-3;
+    }
+
+    &__info {
+        text-align: center;
+        font-size: 1.6rem;
+        color: $color-secondary;
+        padding: 2.5rem 1.4rem;
+        border-bottom: 1px solid #5B6178;
+    }
+
+    &__item {
+        display: flex;
+        justify-content: space-between;
+
+        padding: 2.5rem 1.4rem;
+        border-bottom: 1px solid #5B6178;
+
+        font-size: 2rem;
+        color: $color-white;
+        word-break: break-all;
+
+        p {
+            flex: 1;
+            padding-right: 1rem;
+        }
+    }
+
+    &__error {
+        font-size: 1.6rem;
+        color: $color-secondary;
+        font-style: italic;
+        margin-bottom: 1.4rem;
+    }
+
+    &__form {
+        padding: 1.4rem;
+
+        form {
+            display: flex;
+            input {
+                flex: 1;
+                padding: 1.2rem;
+                border: none;
+                color: $color-secondary;
+                font-size: 1.6rem;
+                margin-right: 1rem;
+                background: $color-dark-2;
+                border-bottom: 3px solid #282b36;
+            }
+        }
+    }
+}

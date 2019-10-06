@@ -1,0 +1,38 @@
+.btn {
+    cursor: pointer;
+    color: $color-white;
+    background: $color-primary;
+    border: none;
+
+    &:disabled {
+        cursor: default;
+        opacity: .5;
+    }
+
+    &--large {
+        width: 100%;
+        margin: 4rem 0;
+        padding: 2rem;
+        font-size: 3.2rem;
+        border-bottom: 6px solid darken($color-primary, 10%);
+    }
+
+    &--cta {
+        padding: 1rem;
+        font-size: 1.6rem;
+        border-bottom: 3px solid darken($color-primary, 10%);
+    }
+
+    &--modal {
+        width: 100%;
+        padding: 1rem;
+        font-size: 1.6rem;
+        border-bottom: 3px solid darken($color-primary, 10%);
+    }
+
+    &--link {
+        font-size: 1.6rem;
+        background: none;
+        color: $color-secondary;
+    }
+}
