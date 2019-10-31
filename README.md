@@ -2,6 +2,8 @@
 
 #### Built using React
 
+[Live Demo](https://uncertainty-sk.netlify.com)
+
 To run project:
 
 ```javascript
