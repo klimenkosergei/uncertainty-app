@@ -6,24 +6,32 @@ import Options from './Options';
 import AddOption from './AddOption';
 import OptionModal from './OptionModal';
 
-export default class UncertaintyApp extends Component {
-  state = {
-    options: [],
-    selectedOption: undefined
-  };
+class UncertaintyApp extends Component {
+  constructor(props) {
+    super(props);
+    this.handlePick = this.handlePick.bind(this);
+    this.handleClearSelectedOption = this.handleClearSelectedOption.bind(this);
+    this.handleAddOption = this.handleAddOption.bind(this);
+    this.handleDeleteOption = this.handleDeleteOption.bind(this);
+    this.handleDeleteOptions = this.handleDeleteOptions.bind(this);
+    this.state = {
+      options: [],
+      selectedOption: undefined
+    };
+  }
 
-  handlePick = () => {
+  handlePick() {
     const randomNum = Math.floor(Math.random() * this.state.options.length);
     this.setState(() => ({
       selectedOption: this.state.options[randomNum].text
     }));
-  };
+  }
 
-  handleClearSelectedOption = () => {
+  handleClearSelectedOption() {
     this.setState(() => ({ selectedOption: undefined }));
-  };
+  }
 
-  handleAddOption = option => {
+  handleAddOption(option) {
     if (!option.text) {
       return 'Enter a valid value';
     } else if (
@@ -32,18 +40,18 @@ export default class UncertaintyApp extends Component {
       return 'This option already exists';
     }
     this.setState(prevState => ({ options: prevState.options.concat(option) }));
-  };
+  }
 
-  handleDeleteOption = optionId => {
+  handleDeleteOption(optionId) {
     // Remove that option from an array
     this.setState(prevState => ({
       options: prevState.options.filter(option => option.id !== optionId)
     }));
-  };
+  }
 
-  handleDeleteOptions = () => {
+  handleDeleteOptions() {
     this.setState(() => ({ options: [] }));
-  };
+  }
 
   componentDidMount() {
     // Fetch the data from localStorage
@@ -89,3 +97,5 @@ export default class UncertaintyApp extends Component {
     );
   }
 }
+
+export default UncertaintyApp;

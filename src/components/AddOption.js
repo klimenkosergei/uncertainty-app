@@ -1,12 +1,16 @@
-import React from 'react';
-import uuidv4 from 'uuidv4';
+import React, { Component } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 
-export default class AddOption extends React.Component {
-  state = {
-    error: undefined
-  };
-  handleAddOption = e => {
-    // Prevent Submit default behaviour
+class AddOption extends Component {
+  constructor(props) {
+    super(props);
+    this.handleAddOption = this.handleAddOption.bind(this);
+    this.state = {
+      error: undefined
+    };
+  }
+
+  handleAddOption(e) {
     e.preventDefault();
 
     // Remove leading and trailing spaces
@@ -23,7 +27,8 @@ export default class AddOption extends React.Component {
       // Clear the input
       e.target.elements.option.value = '';
     }
-  };
+  }
+
   render() {
     return (
       <div className='widget__form'>
@@ -40,3 +45,5 @@ export default class AddOption extends React.Component {
     );
   }
 }
+
+export default AddOption;
